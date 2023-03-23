@@ -1,0 +1,81 @@
+<div class="container text-center pb-5 menus">
+  <div class="card" style="padding: 48px">
+    <!-- < style="width: 18rem;" -->
+    <div class="card-body" [formGroup]="pointFormGroup">
+      <h5 class="card-title">Registrar pontuação</h5>
+
+      <!-- <div class="mb-3"> -->
+      <div class="row">
+        <label
+          style="display: flex"
+          for="formDate"
+          class="form-label"
+          >Data da partida</label
+        >
+        <div class="col-xs-6 col-6 col-md-4 form-group mb-3">
+          <input
+            formControlName="Data"
+            type="text"
+            class="form-control"
+            #dp="bsDatepicker"
+            bsDatepicker
+            disabled
+            id="formDate"
+          />
+        </div>
+        <div class="col-xs-12 col-12 col-md-3 form-group mb-3">
+          <button
+            class="btn btn-secondary"
+            (click)="dp.toggle()"
+            [attr.aria-expanded]="dp.isOpen"
+            type="button"
+          >
+            Alterar data
+          </button>
+        </div>
+      </div>
+      <!-- <label style="display: flex;" for="exampleFormControlInput1" class="form-label">Data da partida</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" bsDatepicker> -->
+
+      <!-- </div> -->
+      <div class="mb-3">
+        <label
+          style="display: flex"
+          for="PointFormControl"
+          class="form-label"
+          >Pontuação</label
+        >
+        <input
+          formControlName="Valor"
+          type="number"
+          class="form-control"
+          id="PointFormControl"
+        />
+      </div>
+      <div class="mb-3">
+        <label
+          style="display: flex"
+          for="JogadorFormControl"
+          class="form-label"
+          >Jogador</label
+        >
+        <input
+          formControlName="Jogador"
+          type="text"
+          class="form-control"
+          id="JogadorFormControl"
+        />
+      </div>
+      <div class="btn-salvar">
+        <button
+          class="btn btn-success"
+          (click)="save()"
+          type="button"
+          [disabled]="!pointFormGroup.valid"
+        >
+          Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

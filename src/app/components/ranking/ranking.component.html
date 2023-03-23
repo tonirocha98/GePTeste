@@ -1,0 +1,55 @@
+<div class="container-sm text-center pb-5 menus">
+  <div class="card" style="padding: 48px" *ngIf="idPlayer === 0">
+    <h5 class="card-title" style="padding-bottom: 32px">
+      Ranking - Maiores Pontuações
+    </h5>
+    <table class="table" >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col"></th>
+          <th scope="col">Pontos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let point of points | slice:0:10;let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td class="highlight" (click)="showStatistics(1)">{{point.Jogador}}</td>
+          <td></td>
+          <td>{{point.Valor}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="padding: 48px" *ngIf="idPlayer != 0">
+    <h5 class="card-title">Estatísticas Jogador - {{playerStatistics.Jogador}}</h5>
+    <div class="card-body" >
+
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">
+          Partidas Jogadas
+          <span class="badge bg-secondary rounded-pill">{{playerStatistics.PartidasJogadas}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          Média de pontuação
+          <span class="badge bg-secondary rounded-pill">{{playerStatistics.MediaPontuacao}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          Maior pontuação <span class="badge bg-secondary rounded-pill">{{playerStatistics.MaiorPontuacao}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          Menor pontuação <span class="badge bg-secondary rounded-pill">{{playerStatistics.MenorPontuacao}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          Quantidade de vezes que bateu o próprio recorde
+          <span class="badge bg-secondary rounded-pill">{{playerStatistics.QuantidadeVezesBateuProprioRecorde}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          Tempo que joga <span class="badge bg-secondary rounded-pill">3 meses</span>
+        </li>
+      </ul>
+    </div>
+    <span *ngIf="idPlayer != 0" (click)="idPlayer=0" class="btn-voltar"> Voltar</span>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.menus {
+  /* margin-right: 32px; */
+}
+.btn-salvar {
+  display: flex;
+  justify-content: flex-end;
+}

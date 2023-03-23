@@ -1,0 +1,16 @@
+.highlight:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-voltar {
+  display: flex;
+  padding-top: 32px;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menus{
+  /* margin-right: 32px; */
+}
