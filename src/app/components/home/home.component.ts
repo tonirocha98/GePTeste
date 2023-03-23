@@ -41,11 +41,8 @@ export class HomeComponent implements OnInit {
       alert("Adicionado com sucesso")
 
       console.log(response);
-      this.goToLink("/ranking");
+      this.pointFormGroup.reset();
+      this.pointFormGroup.get("Data").setValue(new Date())
     });
-  }
-
-  goToLink(link: string): void {
-    this.router.navigateByUrl(link);
   }
 }

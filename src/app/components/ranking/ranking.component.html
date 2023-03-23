@@ -15,7 +15,7 @@
       <tbody>
         <tr *ngFor="let point of points | slice:0:10;let i = index">
           <th scope="row">{{i+1}}</th>
-          <td class="highlight" (click)="showStatistics(1)">{{point.Jogador}}</td>
+          <td class="highlight" (click)="showStatistics(point.Jogador)">{{point.Jogador}}</td>
           <td></td>
           <td>{{point.Valor}}</td>
         </tr>
@@ -23,7 +23,7 @@
     </table>
   </div>
   <div class="card" style="padding: 48px" *ngIf="idPlayer != 0">
-    <h5 class="card-title">Estatísticas Jogador - {{playerStatistics.Jogador}}</h5>
+    <h5 class="card-title" *ngFor="let p of playerStatistics.Pontos | slice:0:1;">Estatísticas - {{p.Jogador}}</h5>
     <div class="card-body" >
 
       <ul class="list-group">
@@ -46,7 +46,7 @@
           <span class="badge bg-secondary rounded-pill">{{playerStatistics.QuantidadeVezesBateuProprioRecorde}}</span>
         </li>
         <li class="list-group-item d-flex justify-content-between">
-          Tempo que joga <span class="badge bg-secondary rounded-pill">3 meses</span>
+          Tempo que joga <span class="badge bg-secondary rounded-pill">{{playerStatistics.TempoDeJogo}} {{playerStatistics.TempoDeJogoTipo}}</span>
         </li>
       </ul>
     </div>
