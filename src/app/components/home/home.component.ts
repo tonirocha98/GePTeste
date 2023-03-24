@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     private arcadeScoreApiService: ArcadeScoreApiService,
-    private datePipe: DatePipe,
-    private router: Router
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit() {
